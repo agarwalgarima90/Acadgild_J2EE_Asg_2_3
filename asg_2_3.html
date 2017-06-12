@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Assignment 03 - JavaScript
+		</title>
+		<script>
+			function submitFunc() {
+				confirm("Do you want to submit");
+			}
+			
+			function formValidation() {
+				var un = document.getElementById('username').value;
+				var fn = document.getElementById('firstname').value;
+				var ln = document.getElementById('lastname').value;
+				var email = document.getElementById('email').value;
+				var mob = document.getElementById('mobile').value;
+				var country = document.getElementById('country').value;
+				var city = document.getElementById('city').value;
+				var pin = document.getElementById('pin').value;
+				
+				var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				
+				if(un.length == 0) {
+					document.getElementById('username').style.background = "red";
+					alert("Please enter valid value");
+				} else {
+					document.getElementById('username').style.background = "white";
+					alert("Please enter valid value");
+				}
+				
+				if(fn.length == 0) {
+					document.getElementById('firstname').style.background = "red";
+					alert("Please enter valid value");
+				} else {
+					document.getElementById('firstname').style.background = "white";
+				}
+				
+				if(ln.length == 0) {
+					document.getElementById('lastname').style.background = "red";
+					alert("Please enter valid value");
+				} else {
+					document.getElementById('lastname').style.background = "white";
+				}
+				
+				if(email.length == 0 || !re.test(email)) {
+					document.getElementById('email').style.background = "red";
+					alert("Please enter valid value");
+				} else {
+					document.getElementById('email').style.background = "white";
+				}
+				
+				if(mob.length != 10 || isNaN(mob)) {
+					document.getElementById('mobile').style.background = "red";
+					alert("Please enter valid value");
+				} else {
+					document.getElementById('mobile').style.background = "white";
+				}
+				
+				if(country.length == 0) {
+					document.getElementById('country').style.background = "red";
+					alert("Please enter valid value");
+				} else {
+					document.getElementById('country').style.background = "white";
+				}
+				
+				if(city.length == 0) {
+					document.getElementById('city').style.background = "red";
+					alert("Please enter valid value");
+				} else {
+					document.getElementById('city').style.background = "white";
+				}
+				
+				if(pin.length == 0) {
+					document.getElementById('pin').style.background = "red";
+					alert("Please enter valid value");
+				} else {
+					document.getElementById('pin').style.background = "white";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form action="" onsubmit="submitFunc()">
+			User name:<br>
+			<input type="text" id="username" onchange="formValidation()">
+			<br>
+			First name:<br>
+			<input type="text" id="firstname" onchange="formValidation()">
+			<br>
+			Last name:<br>
+			<input type="text" id="lastname" onchange="formValidation()">
+			<br>
+			Email<br>
+			<input type="text" id="email" onchange="formValidation()">
+			<br>
+			Mobile<br>
+			<input type="text" id="mobile" onchange="formValidation()" maxlength="10">
+			<br>
+			Country<br>
+			<input type="text" id="country" onchange="formValidation()">
+			<br>
+			City<br>
+			<input type="text" id="city" onchange="formValidation()">
+			<br>
+			Pincode<br>
+			<input type="text" id="pin" maxlength="6" onchange="formValidation()">
+			<br><br>
+			<input type="submit" value="Submit">
+		</form>
+
+	</body>
+</html>
+
